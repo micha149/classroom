@@ -11,4 +11,7 @@
 /vendor/
 /bin/
 /composer.phar
+
 /.idea/*
+.sass-cache
+
