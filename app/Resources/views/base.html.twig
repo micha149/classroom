@@ -37,6 +37,15 @@
                 .badge-grade-F {
                     background-color: #EE0000;
                 }
+                .navbar .project {
+                    display: block;
+                    float: left;
+                    padding: 10px 20px 10px 0;
+                    font-size: 20px;
+                    font-weight: 200;
+                    color: #333;
+                    text-shadow: 0 1px 0 #ffffff;
+                }
             </style>
         {% endblock %}
         
@@ -47,6 +56,40 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <div class="navbar navbar-fixed">
+                <div class="container">
+            <div class="navbar-inner">
+                    <a class="brand" href="{{ path('code_index') }}">Project Code</a>
+                    <div class="project">
+                        code / code
+                    </div>
+    
+                    <ul class="nav pull-right">
+                        <li>
+                            <a href="#">Latest</a>
+                        </li>
+                        <li class="first">
+                            <a href="#">History</a>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li class="last dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                micha149
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">code/code</a></li>
+                                <li><a href="#">micha149/symfony2</a></li>
+                                <li><a href="#">micha149/wedding-page</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Account</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="container">
             {% block body %}{% endblock %}
         </div>
