@@ -6,6 +6,7 @@ use Classroom\ProjectBundle\Builder;
 use Classroom\ProjectBundle\Entity\Revision;
 use JMS\JobQueueBundle\Entity\Job;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -21,7 +22,7 @@ class BuildCommand extends ContainerAwareCommand
         $this
             ->setName('classroom:project:build')
             ->setDescription('Build revision')
-            ->addArgument('revisionId');
+            ->addArgument('revisionId', InputArgument::REQUIRED);
     }
 
     /**
