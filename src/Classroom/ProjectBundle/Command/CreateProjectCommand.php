@@ -60,6 +60,6 @@ class CreateProjectCommand extends ContainerAwareCommand
 
         $entityManager->flush();
 
-        $output->writeln('New project' . $projectKey . ' created.');
+        $output->writeln('<info>New project ' . $projectKey . ' created.</info>');
     }
 }
