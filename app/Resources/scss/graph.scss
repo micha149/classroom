@@ -1,29 +1,40 @@
-.graph-breakdown {
-    position: relative;
-    width: 256px;
-    height: 256px;
-}
-
-.graph-breakdown .text {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    margin-top: -23px;
-    width: 100%;
-    text-align:center;
-    color:  #666;
-}
-.graph-breakdown .text .value {
-    display:block;
-    font-size: 30px;
-    padding: 0 30px;
-}
-.graph-breakdown .text .type {
-    display:block;
-    margin: 5px 0 0;
-    padding: 0 30px;
-}
-
-.graph-breakdown svg {
-    position:relative;
+.breakdown {
+    .chart {
+        
+        position: relative;
+        
+        .text {
+            display: block;
+            padding-top: 100%;
+            position: relative;
+            text-align: center;
+            
+            .value,
+            .type {
+                box-sizing: border-box;
+                display: block;
+                padding: 0 30px;
+                position: absolute;
+                top: 50%;
+                width: 100%
+            }
+            
+            .value {
+                font-size: 30px;
+                margin-top: -22px;
+            }
+            
+            .type {
+                margin-top: 2px;
+            }
+            
+            color:  #666;
+        }
+        
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 }

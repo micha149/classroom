@@ -81,8 +81,10 @@
          */
         _initArcs: function() {
             var elem   = this.element,
-                radius = Math.min(elem.width(), elem.height()) / 2;
-                
+                width = elem.width(),
+                height = elem.height(),
+                radius = Math.min(width, height) / 2;
+
             this._getArc = d3.svg.arc()
                 .outerRadius(radius - 5)
                 .innerRadius(radius - 25);
@@ -90,7 +92,12 @@
             this._getArcOver = d3.svg.arc()            
                 .outerRadius(radius)
                 .innerRadius(radius - 20);
-                
+
+            elem.children('svg').attr("width", radius * 2)
+                .attr("height", radius * 2);
+
+            this._svgElement.attr("transform", "translate(" + radius + "," + radius + ")");
+            
             this._drawSegments();
         },
         
@@ -128,10 +135,7 @@
             this._textElement.appendTo(elem);
                 
             this._svgElement = container.append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .append("g")
-                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+                .append("g");
 
         },
         
