@@ -2,3 +2,47 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "susy";
+
+$total-columns: 12;
+$small-screen: 0 6 34em;
+$big-screen: 34em 12 51em;
+$bigger-screen: 51em 12;
+
+@include at-breakpoint($small-screen) {
+
+    .container {
+        @include container();
+        background: red;
+    }
+
+    .breakdown {
+        @include span-columns(2, 6);
+    }
+    
+    .summary {
+        @include span-columns(4 omega, 6);
+    }
+
+}
+
+@include at-breakpoint($big-screen) {
+
+    .container {
+        @include container();
+        color: blue;
+    }
+    
+
+    .breakdown {
+        @include span-columns(4, 12);
+        @include push(8);
+    }
+    
+    .summary {
+        @include span-columns(8, 12);
+        @include pull(12);
+    }
+
+}
